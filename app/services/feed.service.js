@@ -1,5 +1,5 @@
 'use strict';
-//used the
+
 angular.module('feedApp.feed-service', [])
     .factory('feedService', function () {
         const QnA = {
