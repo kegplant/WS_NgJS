@@ -28,7 +28,7 @@ angular.module('feedApp.feed-detail', ['ngRoute', 'ngSanitize'])
         created_at: moment().format("DD/MMM/YY HH:mm"),
         upvotes: "0",
         downvotes: "0",
-      }
+      };
       feeds.answers.unshift(newAnswer);
       feeds.newAnswers[index] = "";
     };
@@ -42,7 +42,7 @@ function onInit($scope, feeds, feedService) {
     [feeds.questions, feeds.answers] = [feedService.questions, feedService.answers];
     feeds.newAnswers = Array(feeds.questions.length).fill("");
   } else {
-    console.log("initializing")
+    console.log("initializing");
     feedService.init(() => {
       [feeds.questions, feeds.answers] = [feedService.questions, feedService.answers];
       feeds.newAnswers = Array(feeds.questions.length).fill("");
