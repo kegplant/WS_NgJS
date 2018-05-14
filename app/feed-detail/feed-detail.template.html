@@ -1,0 +1,42 @@
+<div class="container">
+    <a href="/">Back</a>
+    <div ng-repeat="question in feeds.questions">
+        <div ng-if="question.Id===feeds.Q_Id">
+            <h3>
+                <a href="#!/detail/{{question.Id}}"> Question {{$index + 1}} </a>
+            </h3>
+            <div ng-bind-html="question.Text"> </div>
+            <div>
+                <i class="far fa-thumbs-up" ng-click="feeds.addVote('plus',question)">{{question.upvotes}}</i>
+                <i class="far fa-thumbs-down" ng-click="feeds.addVote('minus',question)">{{question.downvotes}}</i>
+            </div>
+            <br>
+            <br>
+            <form name="myForm">
+                <label>Your answer:
+                    <textarea type="text" name="answer" placeholder="Your answer " ng-model="feeds.newAnswers[$index]">
+                    </textarea>
+                </label>
+                <button type="submit" ng-click="feeds.addAnswer($index, question.Id)">submit your answer</button>
+            </form>
+            <br>
+            <h5>
+                Answers:
+            </h5>
+            <div class="row">
+                <div ng-repeat=" answer in feeds.answers" class="col s12 m6">
+                    <div ng-if="answer['Question-Id'] === question.Id" class="card blue darken-2 small">
+                        <div class="card-content white-text ">
+                            <p>{{answer.created_at}}</p>
+                            <p ng-bind-html="answer.Answer" ng-click="feeds.toggleClass($event)"> </p>
+                        </div>
+                        <div class="card-action">
+                            <i class="far fa-thumbs-up" ng-click="feeds.addVote('plus',answer)">{{answer.upvotes}}</i>
+                            <i class="far fa-thumbs-down" ng-click="feeds.addVote('minus',answer)">{{answer.downvotes}}</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="feedApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>The Feed</title>
+  <base href="/">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+  <div ng-view></div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/app.js"></script>
+  <script src="/services/feed.service.js"></script>
+  <script src="/feeds/feeds.js"></script>
+  <script src="/feed-detail/feed-detail.js"></script>
+  <script src="/moment.js"></script>
+</body>
+
+</html>
