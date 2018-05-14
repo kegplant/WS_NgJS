@@ -8,7 +8,7 @@ angular.module('feedApp.feed-service', [])
                 getQuestionsAndAnswers().then(res => {
                     [QnA.questions, QnA.answers] = [sortByDate(res[0]), sortByDate(res[1])];
                     QnA.isInitialized = true;
-                    // console.log(QnA.questions); //wth is this??
+                    // console.log(QnA.questions); //ok
                     // console.log(QnA.answers);
                     callback();
                 });
